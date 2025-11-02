@@ -11,11 +11,16 @@ import org.example.patient.repository.ObservationRepository;
 import org.example.patient.repository.PatientRepository;
 import org.example.patient.utils.BasicResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.sql.Connection;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
+
+import static io.micrometer.common.util.StringUtils.isNotBlank;
 
 @Service
 public class PatientsService {
@@ -65,18 +70,29 @@ public class PatientsService {
         patientRepository.delete(existingPatient);
         return BasicResponse.OfSuccess("successfully deleted");
     }
-//
-//
-//    public List<PatientsResponse> findPatientsByCriteria( String familyName, String givenName, int identifier, String birthDateString) {
-//        Optional<Optional<PatientsEntity>> patientinfo = Optional.ofNullable(patientRepository.findByIdentifier(identifier));
-//        if(!familyName.isEmpty()){
-//            List<EncounterEntity> encounterEntities = encounterRepository.findByPatientId_Id(patientinfo.get().get().getIdentifier());
-//        }
-//
-//        List<PatientsResponse> response = patientRepository.findPatientsByCriteria(familyName, givenName, identifier, birthDateString);
-////
-//        return response;
-//    }
+
+public List<PatientsEntity> search(
+        String family,
+        String given,
+        String identifier,
+        LocalDate birthDate,
+        LocalDate birthDateFrom,
+        LocalDate birthDateTo) {
+
+    Specification<PatientsEntity> spec = Specification.where(null);
+    spec = spec.and(PatientsSpecification.hasFamilyName(family));
+    spec = spec.and(PatientsSpecification.hasGivenName(given));
+    spec = spec.and(PatientsSpecification.hasIdentifier(identifier));
+
+    if (birthDate != null) {
+        spec = spec.and(PatientsSpecification.birthDateBetween(birthDate, birthDate));
+    } else {
+        spec = spec.and(PatientsSpecification.birthDateBetween(birthDateFrom, birthDateTo));
+    }
+    return patientRepository.findAll(spec);
+
+}
+
 
     public List<EncounterEntity> getEncountersByPatientId(int patientId) {
         List<EncounterEntity> encounters = encounterRepository.findByPatientId_Id(patientId);

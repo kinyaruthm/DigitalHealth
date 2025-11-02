@@ -9,12 +9,14 @@ import org.example.patient.dtos.responses.PatientsResponse;
 import org.example.patient.service.PatientsService;
 import org.example.patient.utils.BasicResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.Connection;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -59,6 +61,18 @@ public class PatientsController {
 //        );
 //        return ResponseEntity.ok(results);
 //    }
+
+    @GetMapping
+    public List<PatientsEntity> search(
+            @RequestParam(required = false) String family,
+            @RequestParam(required = false) String given,
+            @RequestParam(required = false) String identifier,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate birthDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate birthDateFrom,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate birthDateTo) {
+
+        return patientsService.search(family, given, identifier, birthDate, birthDateFrom, birthDateTo);
+    }
 
     @GetMapping(path = "/patient/{patientId}")
     public BasicResponse getPatientEncounters(@PathVariable("patientId") int patientId) {
