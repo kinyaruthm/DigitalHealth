@@ -1,0 +1,16 @@
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\ExerciseApplication.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\controller\PatientsController.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\dtos\requests\EncounterRequest.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\dtos\requests\PatientRequest.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\dtos\responses\EncounterResponse.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\dtos\responses\ObservationResponse.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\dtos\responses\PatientsResponse.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\Model\EncounterEntity.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\Model\ObservationEntity.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\Model\PatientsEntity.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\repository\EncounterRepository.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\repository\ObservationRepository.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\repository\PatientRepository.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\repository\PatientsRepository.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\service\PatientsService.java
+D:\PersonalDevProjects\ohs-backend-developer-exercise\starter-project\src\main\java\org\example\patient\utils\BasicResponse.java

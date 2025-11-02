@@ -1,0 +1,16 @@
+org\example\patient\utils\BasicResponse.class
+org\example\ExerciseApplication.class
+org\example\patient\Model\ObservationEntity.class
+org\example\patient\repository\EncounterRepository.class
+org\example\patient\dtos\responses\EncounterResponse.class
+org\example\patient\service\PatientsService.class
+org\example\patient\controller\PatientsController.class
+org\example\patient\dtos\requests\EncounterRequest.class
+org\example\patient\dtos\requests\PatientRequest.class
+org\example\patient\Model\PatientsEntity$Gender.class
+org\example\patient\Model\PatientsEntity.class
+org\example\patient\dtos\responses\PatientsResponse.class
+org\example\patient\dtos\responses\ObservationResponse.class
+org\example\patient\Model\EncounterEntity.class
+org\example\patient\repository\ObservationRepository.class
+org\example\patient\repository\PatientRepository.class
