@@ -29,11 +29,17 @@ docker run -p 8080:8080 ohs-api
 
 ## Endpoints
 POST /api/patients - add new patient
+
 GET /api/patients/{id} - gets patients information by id
+
 PUT /api/patients/{id} - edits patients details
+
 DELETE /api/patients/{id} - delete patients details
+
 GET /api/patients?family=&given=&identifier=&birthDate= • As capacity allows, they’d
 love to list a Patient’s Encounters and Observations:
+
 GET /api/patients/{id}/encounters
+
 GET /api/patients/{id}/observations 
 
